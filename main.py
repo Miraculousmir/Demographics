@@ -9,47 +9,11 @@ st.title('Health Information Input Form')
 
 # Input fields based on the columns
 diabetic = st.selectbox('Diabetic Status', [1, 0])
-alcohol_level1 = st.text_input("Alcohol Level:", value="0.084973629")
-try:
-    # Attempt to convert to float
-    alcohol_level = float(alcohol_level1)
-
-except ValueError:
-    # Handle the error if conversion fails
-    st.error("Please enter a valid decimal number.")
-heart_rate = st.number_input('Heart Rate', min_value=50, max_value=120, step=1)
-blood_oxygen1 = st.text_input('Blood Oxygen Level (%)', value="96.23074296")
-try:
-    # Attempt to convert to float
-    blood_oxygen = float(blood_oxygen1)
-
-except ValueError:
-    # Handle the error if conversion fails
-    st.error("Please enter a valid decimal number.")
-body_temp1 = st.text_input('Body Temperature (°C)', value="36.22485168")
-try:
-    # Attempt to convert to float
-    body_temp = float(body_temp1)
-
-except ValueError:
-    # Handle the error if conversion fails
-    st.error("Please enter a valid decimal number.")
-weight1 = st.text_input('Weight (kg)', value="57.56397754")
-try:
-    # Attempt to convert to float
-    weight = float(weight1)
-
-except ValueError:
-    # Handle the error if conversion fails
-    st.error("Please enter a valid decimal number.")
-mri_delay1 = st.text_input('MRI Delay ', value="36.42102798")
-try:
-    # Attempt to convert to float
-    mri_delay = float(mri_delay1)
-
-except ValueError:
-    # Handle the error if conversion fails
-    st.error("Please enter a valid decimal number.")
+alcohol_level = st.number_input('Alcohol Level', min_value=0, max_value=1, step=0.000000001)
+blood_oxygen = st.number_input('Blood Oxygen Level (%)', min_value=0, max_value=100, step=1)
+body_temp = st.number_input('Body Temperature (°C)', min_value=0, max_value=100, step=1)
+weight = st.number_input('Weight', min_value=0, max_value=1000, step=1)
+mri_delay = st.number_input('MRI Delay', min_value=0, max_value=100, step=1)
 prescription = st.text_input('Prescription')
 dosage = st.number_input('Dosage (mg)', min_value=0.0, max_value=30.0, step=0.5)
 age = st.number_input('Age', min_value=0, max_value=100, step=1)
